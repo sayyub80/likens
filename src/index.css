@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+
+
+@font-face {
+  font-family: 'StoriesThinking';
+  /* Ensure the path correctly points to your assets/fonts folder */
+  src: url('./assets/fonts/trail2.ttf') format('truetype'),
+       url('./assets/fonts/trail1.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* Mochi Boom */
+@font-face {
+  font-family: 'MochiBoom';
+  src: url('./assets/fonts/Mochi Boom DEMO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Spirit Sunday */
+@font-face {
+  font-family: 'SpiritSunday';
+  src: url('./assets/fonts/Spirit Sunday.ttf') format('truetype'),
+       url('./assets/fonts/Spirit Sunday.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Moldie */
+@font-face {
+  font-family: 'Moldie';
+  src: url('./assets/fonts/Moldie Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Relyne */
+@font-face {
+  font-family: 'Relyne';
+  src: url('./assets/fonts/Relyne-Regular.ttf') format('truetype'),
+       url('./assets/fonts/Relyne-Oblique.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'sb';
+  src: url('./assets/fonts/Valty DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'sbb';
+  src: url('./assets/fonts/Poppins-Light.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+.logo{
+  font-family: "SpiritSunday";
+}
+
+
+.para{
+  font-family: "sb";
+}
+
+.sbb{
+  font-family: "sbb";
+}
