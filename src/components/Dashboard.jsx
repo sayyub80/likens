@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Menu, X, Plus, ChevronDown, Download, Star, 
   Building2, LayoutDashboard, Palette, FileText, 
@@ -6,6 +7,12 @@ import {
 } from 'lucide-react';
 
 const Dashboard = () => {
+    const [name, setName] = useState('Creator');
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('username');
+    if (storedName) setName(storedName);
+  }, []);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Sidebar navigation data from Image 1
@@ -45,6 +52,8 @@ const Dashboard = () => {
     { id: 3, name: 'Marketing Plus', sub: 'Fitness Coach · Professional License · $500/mo' },
   ];
 
+
+
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex font-sans">
       
@@ -56,13 +65,17 @@ const Dashboard = () => {
         <div className="flex flex-col h-full p-6">
           <div className="flex items-center justify-between mb-10 px-2">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#7C3AED] to-[#4F46E5] rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-indigo-200">✨</div>
-              <span className="text-xl font-bold tracking-tight text-gray-900">Likens</span>
+             <Link to="/" className="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+  <div className="w-8 h-8 bg-gradient-to-br from-[#7C3AED] to-[#4F46E5] rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-indigo-200 group-hover:scale-105 transition-transform">
+    ✨
+  </div>
+  <span className="text-xl font-bold tracking-tight text-gray-900">Likens</span>
+</Link>
             </div>
             <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-2 text-gray-400 hover:bg-gray-100 rounded-full"><X size={20} /></button>
           </div>
 
-          <nav className="flex-1 space-y-1">
+          <nav className="flex-col space-y-1 ">
             {sidebarItems.map((item, i) => (
               <button key={i} className={`
                 w-full flex items-center justify-between px-4 py-3 rounded-2xl transition-all
@@ -81,16 +94,16 @@ const Dashboard = () => {
             ))}
           </nav>
 
-          <div className="pt-6 border-t border-gray-100 mt-6">
+          <div className=" border-t border-gray-100 mt-10">
             <button className="w-full py-4 bg-gradient-to-r from-[#7C3AED] to-[#4F46E5] text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-indigo-500/20 hover:opacity-95 transition-all active:scale-[0.98]">
-              <Plus size={20} /> Upload New Avatar
+              <Plus size={20} /> Upload New Assets
             </button>
           </div>
         </div>
       </aside>
 
       {/* --- MAIN CONTENT (Images 4, 5, 6) --- */}
-      <main className="flex-1 min-w-0 h-screen overflow-y-auto">
+      <main className="flex-1 min-w-0 h-screen overflow-y-auto mt-16">
         {/* Header */}
         <header className="bg-white/80 backdrop-blur-md sticky top-0 z-30 px-8 py-5 flex items-center justify-between border-b border-gray-100">
           <div className="flex items-center gap-4 text-gray-800">
@@ -98,7 +111,9 @@ const Dashboard = () => {
               <Menu size={22} />
             </button>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">Welcome back, Navin! 👋</h1>
+              <h1 className="text-4xl font-bold text-slate-900">
+        Welcome back, {name}! 👋
+      </h1>
               <p className="text-gray-400 text-xs font-medium mt-0.5">Here's what's happening with your avatars today!</p>
             </div>
           </div>

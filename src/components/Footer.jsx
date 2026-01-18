@@ -1,5 +1,5 @@
 import React from 'react';
-
+import GetStarted from './GetStarted'
 const Footer = () => {
   const footerLinks = {
     Product: ['Marketplace', 'Pricing', 'Features', 'API'],
@@ -14,27 +14,11 @@ const Footer = () => {
         {/* Subtle background glow effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] opacity-30"></div>
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-10">
-          <h2 className="text-5xl md:text-7xl font-light text-white font-mochi leading-tight">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-purple-100 font-relyne max-w-2xl mx-auto leading-relaxed">
-            Join 500+ brands and creators using Likens to power their AI avatar content
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-6 font-relyne">
-            <button className="bg-white text-brandPurple px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-2xl">
-              Browse Marketplace
-            </button>
-            <button className="bg-transparent border-2 border-white/40 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-md">
-              Become a Creator
-            </button>
-          </div>
-        </div>
+      <GetStarted/>
       </section>
 
       {/* --- MAIN FOOTER LINKS --- */}
-      <section className="bg-[#0B0E14] text-gray-400 py-20 px-8">
+      <section className="bg-[#0B0E14] text-gray-400 pt-15 pb-8 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           
           {/* Brand Column */}
